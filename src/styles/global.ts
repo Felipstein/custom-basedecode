@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
 export default createGlobalStyle`
 
@@ -8,15 +8,20 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  html: {
+  html {
     font-size: 62.5%;
   }
 
   body {
     height: 100vh;
-    font-family: ${({ theme }) => theme.font.family};
-    font-size: ${({ theme }) => theme.font.size};
-    background: ${({ theme }) => theme.background};
+
+    ${({ theme }) => css`
+      font-family: ${theme.font.family};
+      font-size: ${theme.font.size};
+      background: ${theme.background};
+      color: ${theme.colors.white};
+      font-size: ${theme.font.size.md};
+    `};
   }
 
 `;
