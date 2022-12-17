@@ -1,7 +1,5 @@
 export function App() {
   return (
-    <div className="App">
-      
-    </div>
-  )
+    <h1>Oi</h1>
+  );
 }
