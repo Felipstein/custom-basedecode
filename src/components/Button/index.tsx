@@ -6,7 +6,7 @@ type ButtonProps = S.ButtonStyledProps & ButtonHTMLAttributes<HTMLButtonElement>
 
 export default function Button({ variant = 'default', children }: ButtonProps) {
   return (
-    <S.ButtonStyled variant={variant}>
+    <S.ButtonStyled variant={variant} className="app-button">
       {children}
     </S.ButtonStyled>
   );

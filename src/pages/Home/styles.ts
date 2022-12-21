@@ -13,4 +13,7 @@ export const Container = styled.header`
   .app-text {
     margin-top: 1.6rem;
   }
+  .app-button {
+    margin-top: 6.4rem;
+  }
 `;
