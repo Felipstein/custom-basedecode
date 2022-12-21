@@ -1,3 +1,4 @@
+import Button from '../../components/Button';
 import { Logo } from '../../components/Logo';
 import { Text } from '../../components/Text';
 
@@ -10,6 +11,9 @@ export function Home() {
       <Text align='center'>
         Codifique ou decodifique qualquer texto na linguagem chagasnês! É simples, fácil, rápido e gratuíto!
       </Text>
+      <Button variant='default'>
+        Botão
+      </Button>
     </S.Container>
   );
 }
