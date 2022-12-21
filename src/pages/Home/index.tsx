@@ -7,8 +7,8 @@ export function Home() {
   return (
     <S.Container>
       <Logo />
-      <Text>
-        Hello World!
+      <Text align='center'>
+        Codifique ou decodifique qualquer texto na linguagem chagasnês! É simples, fácil, rápido e gratuíto!
       </Text>
     </S.Container>
   );

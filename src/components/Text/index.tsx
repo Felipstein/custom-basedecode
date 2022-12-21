@@ -8,12 +8,12 @@ type TextProps = {
   children: React.ReactNode;
 } & S.TextContainerProps & HTMLAttributes<HTMLElement>
 
-export function Text({ size, asChild, children }: TextProps) {
+export function Text({ size, align, asChild, children }: TextProps) {
   const Comp = asChild ? Slot : 'span';
 
   return (
-    <S.Container size={size}>
-      <Comp>
+    <S.Container size={size} align={align}>
+      <Comp className='app-text'>
         {children}
       </Comp>
     </S.Container>
@@ -22,5 +22,6 @@ export function Text({ size, asChild, children }: TextProps) {
 
 Text.defaultProps = {
   size: 'md',
+  align: 'start',
   asChild: false,
 };
