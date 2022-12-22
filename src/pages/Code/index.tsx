@@ -1,4 +1,5 @@
 import { Button } from '../../components/Button';
+import { Footer } from '../../components/Footer';
 import { TextInputRoot, TextInputLabel, TextInputArea } from '../../components/TextInput';
 
 import * as S from './styles';
@@ -40,6 +41,10 @@ export function Code() {
             </Button>
           </div>
         </div>
+      </div>
+
+      <div className="footer-container">
+        <Footer />
       </div>
     </S.Container>
   );
