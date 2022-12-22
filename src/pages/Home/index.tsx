@@ -18,7 +18,7 @@ export function Home() {
         Codifique ou decodifique qualquer texto na linguagem chagasnês! É simples, fácil, rápido e gratuíto!
       </Text>
 
-      <Button variant='default' asChild>
+      <Button asChild>
         <Link to="/app/code">
           Vamos lá!
         </Link>

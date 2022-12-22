@@ -1,13 +1,33 @@
+import styled, { css } from 'styled-components';
 import { Slot } from '@radix-ui/react-slot';
-import styled from 'styled-components';
+
+const variants = {
+  default: css`
+    background-color: ${({ theme }) => theme.colors.orange[500]};
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.orange[400]};
+    }
+
+    &:active {
+      background-color: ${({ theme }) => theme.colors.orange[100]};
+    }
+    `,
+  secondary: css`
+    background-color: ${({ theme }) => theme.colors.white};
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.orange[100]};
+    }
+  `,
+};
 
 export type ButtonStyledProps = {
-  variant: 'default' | 'secondary';
+  variant?: 'default' | 'secondary';
 }
 
 export const Container = styled(Slot)<ButtonStyledProps>`
   color: ${({ theme }) => theme.colors.gray[900]};
-  background-color: ${({ theme }) => theme.colors.orange[500]};
 
   text-decoration: none;
 
@@ -28,15 +48,5 @@ export const Container = styled(Slot)<ButtonStyledProps>`
   outline: transparent 2px solid;
   cursor: pointer;
 
-  &:hover, &:focus {
-    background-color: ${({ theme }) => theme.colors.orange[400]};
-
-    &:focus {
-      outline-color: ${({ theme }) => theme.colors.orange[100]};
-    }
-  }
-
-  &:active {
-    background-color: ${({ theme }) => theme.colors.orange[100]};
-  }
+  ${({ variant }) => variants[variant || 'default']};
 `;
