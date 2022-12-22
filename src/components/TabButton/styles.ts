@@ -16,6 +16,10 @@ export const NavLinkStyled = styled(NavLink)<NavLinkProps>`
 
   min-width: 16.4rem;
 
+  &:hover {
+    color: ${({ theme }) => theme.colors.orange[400]};
+  }
+
   &.active {
     background-color: ${({ theme }) => theme.colors.orange[500]};
 
