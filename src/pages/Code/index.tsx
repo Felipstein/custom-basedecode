@@ -1,4 +1,3 @@
-import React from 'react';
 import { CodeForm } from '../../components/CodeForm';
 
 export function Code() {
