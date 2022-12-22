@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState } from 'react';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { TextInputRoot, TextInputLabel, TextInputArea } from '../../components/TextInput';
+import { useClipboard } from '../../hooks/useClipboard';
 import { Text } from '../Text';
 
 import * as S from './styles';
@@ -25,6 +26,7 @@ type CodeFormProps = {
 export function CodeForm({ type, onSubmit }: CodeFormProps) {
   const [inputText, setInputText] = useState('');
   const [outputText, setOutputText] = useState('');
+  const copyToClipboard = useClipboard();
 
   function handleChangeInputText(event: ChangeEvent<HTMLTextAreaElement>) {
     const value = event.target.value;
@@ -34,10 +36,6 @@ export function CodeForm({ type, onSubmit }: CodeFormProps) {
   function handleClear() {
     setInputText('');
     setOutputText('');
-  }
-
-  function handleCopyToClipboard() {
-    navigator.clipboard.writeText(outputText);
   }
 
   return (
@@ -79,7 +77,7 @@ export function CodeForm({ type, onSubmit }: CodeFormProps) {
           </TextInputRoot>
 
           <div className="actions">
-            <Button type="button" onClick={handleCopyToClipboard}>
+            <Button type="button" onClick={() => copyToClipboard(outputText)}>
               Copiar
             </Button>
           </div>
