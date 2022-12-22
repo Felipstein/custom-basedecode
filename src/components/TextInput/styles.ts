@@ -18,6 +18,7 @@ export const TextAreaStyled = styled.textarea`
   border-radius: 8px;
   padding: 1.2rem 2.0rem;
   resize: none;
+  box-shadow: ${({ theme }) => theme.shadow};
 
   width: 60rem;
   height: 27.4rem;

@@ -30,6 +30,8 @@ declare module 'styled-components' {
     },
 
     background: string;
+
+    shadow: string;
   }
 
 }

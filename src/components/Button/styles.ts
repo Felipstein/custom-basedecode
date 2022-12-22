@@ -48,6 +48,8 @@ export const Container = styled(Slot)<ButtonStyledProps>`
   outline: transparent 2px solid;
   cursor: pointer;
 
+  box-shadow: ${({ theme }) => theme.shadow};
+
   ${({ variant }) => variants[variant || 'default']};
 
   &:disabled {
