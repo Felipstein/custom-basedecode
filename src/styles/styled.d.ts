@@ -19,6 +19,7 @@ declare module 'styled-components' {
       gray: {
         600: string;
         700: string;
+        800: string;
         900: string;
       },
       orange: {

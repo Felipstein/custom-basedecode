@@ -1,4 +1,4 @@
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 import { Logo } from '../../components/Logo';
 import { TabButton } from '../../components/TabButton';
@@ -27,6 +27,8 @@ export function Layout() {
           Decodificar
         </TabButton>
       </div>
+
+      <Outlet />
     </S.Container>
   );
 }

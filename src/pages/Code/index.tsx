@@ -1,5 +1,12 @@
+import { TextInputRoot, TextInputLabel, TextInputArea } from '../../components/TextInput';
+
 export function Code() {
   return (
-    <h1>Code Page</h1>
+    <TextInputRoot>
+      <TextInputLabel>
+        Coloque seu texto aqui
+      </TextInputLabel>
+      <TextInputArea placeholder='...' />
+    </TextInputRoot>
   );
 }

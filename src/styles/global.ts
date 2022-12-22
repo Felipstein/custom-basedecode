@@ -13,7 +13,7 @@ export default createGlobalStyle`
   }
 
   body {
-    height: 100vh;
+    min-height: 100vh;
 
     ${({ theme }) => css`
       font-family: ${theme.font.family};
