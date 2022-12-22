@@ -29,7 +29,9 @@ export function CodeForm({ type, onSubmit }: CodeFormProps) {
     handleChangeInputText,
     setOutputText,
     handleClear,
-    copyToClipboard
+    copyToClipboard,
+    isInputFilled,
+    isOuputFilled
   } = useCodeForm();
 
   return (
@@ -49,11 +51,20 @@ export function CodeForm({ type, onSubmit }: CodeFormProps) {
           </TextInputRoot>
 
           <div className="actions">
-            <Button type="button" variant='secondary' onClick={handleClear}>
+            <Button
+              type="button"
+              variant='secondary'
+              onClick={handleClear}
+              disabled={!isInputFilled}
+            >
               Limpar
             </Button>
 
-            <Button type="button" onClick={() => onSubmit(inputText, (outputText: string) => setOutputText(outputText))}>
+            <Button
+              type="button"
+              onClick={() => onSubmit(inputText, (outputText: string) => setOutputText(outputText))}
+              disabled={!isInputFilled}
+            >
               {flexibleLabels.codeBtn[type]}
             </Button>
           </div>
@@ -71,7 +82,10 @@ export function CodeForm({ type, onSubmit }: CodeFormProps) {
           </TextInputRoot>
 
           <div className="actions">
-            <Button type="button" onClick={() => copyToClipboard(outputText)}>
+            <Button
+              type="button" onClick={() => copyToClipboard(outputText)}
+              disabled={!isOuputFilled}
+            >
               Copiar
             </Button>
           </div>

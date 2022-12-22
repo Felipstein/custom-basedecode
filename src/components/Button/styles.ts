@@ -12,7 +12,7 @@ const variants = {
     &:active {
       background-color: ${({ theme }) => theme.colors.orange[100]};
     }
-    `,
+  `,
   secondary: css`
     background-color: ${({ theme }) => theme.colors.white};
 
@@ -49,4 +49,9 @@ export const Container = styled(Slot)<ButtonStyledProps>`
   cursor: pointer;
 
   ${({ variant }) => variants[variant || 'default']};
+
+  &:disabled {
+    opacity: 0.55;
+    pointer-events: none;
+  }
 `;
