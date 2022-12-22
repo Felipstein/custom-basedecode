@@ -16,4 +16,8 @@ export const Container = styled.header`
   .app-button {
     margin-top: 6.4rem;
   }
+
+  .social-links {
+    margin-top: 6.8rem;
+  }
 `;

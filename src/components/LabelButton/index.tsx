@@ -1,13 +1,20 @@
+import { Slot } from '@radix-ui/react-slot';
 import { HTMLAttributes } from 'react';
 
 import * as S from './styles';
 
-type LabelButtonProps = HTMLAttributes<HTMLElement>;
+type LabelButtonProps = {
+  asChild?: boolean;
+} & HTMLAttributes<HTMLElement>;
 
-export function LabelButton({ children }: LabelButtonProps) {
+export function LabelButton({ asChild, children }: LabelButtonProps) {
+  const Comp = asChild ? Slot : 'button';
+
   return (
     <S.Container>
-      {children}
+      <Comp>
+        {children}
+      </Comp>
     </S.Container>
   );
 }

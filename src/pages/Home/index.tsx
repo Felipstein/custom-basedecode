@@ -21,11 +21,15 @@ export function Home() {
       </Button>
 
       <div className="social-links">
-        <LabelButton>
-          <GitHubIcon />
+        <LabelButton asChild>
+          <a href="https://github.com/Felipstein/custom-basedecode" target="_blank" rel="noreferrer">
+            <GitHubIcon />
+          </a>
         </LabelButton>
-        <LabelButton>
-          <FigmaIcon />
+        <LabelButton asChild>
+          <a href='https://www.figma.com/file/FNLG1HMP1Ybjn24tXFqMXV/Chagasn%C3%AAs?t=78hZatPjsNftdazU-1' target="_blank" rel="noreferrer">
+            <FigmaIcon />
+          </a>
         </LabelButton>
       </div>
     </S.Container>
