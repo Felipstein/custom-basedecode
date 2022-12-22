@@ -18,10 +18,15 @@ export const ButtonStyled = styled.button<ButtonStyledProps>`
   border: none;
   border-radius: 8px;
 
+  outline: transparent 2px solid;
   cursor: pointer;
 
-  &:hover {
+  &:hover, &:focus {
     background-color: ${({ theme }) => theme.colors.orange[400]};
+
+    &:focus {
+      outline-color: ${({ theme }) => theme.colors.orange[100]};
+    }
   }
 
   &:active {
