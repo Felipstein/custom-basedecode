@@ -1,4 +1,5 @@
-import { HTMLAttributes } from 'react';
+import { TextareaHTMLAttributes } from 'react';
+
 import * as S from './styles';
 
 type TextInputRoot = {
@@ -28,10 +29,10 @@ export function TextInputLabel({ children }: TextInputLabel) {
 type TextInputArea = {
   placeholder?: string;
   readOnly?: boolean;
-} & HTMLAttributes<HTMLElement>;
+} & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-export function TextInputArea({ readOnly, placeholder }: TextInputArea) {
+export function TextInputArea({ readOnly, placeholder, ...props }: TextInputArea) {
   return (
-    <S.TextAreaStyled placeholder={placeholder} readOnly={readOnly} />
+    <S.TextAreaStyled placeholder={placeholder} readOnly={readOnly} {...props} />
   );
 }

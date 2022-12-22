@@ -1,3 +1,4 @@
+import React, { ChangeEvent, useState } from 'react';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { TextInputRoot, TextInputLabel, TextInputArea } from '../../components/TextInput';
@@ -17,10 +18,28 @@ const flexibleLabels = {
 };
 
 type CodeFormProps = {
+  onSubmit: (inputText: string, setOutputText: (outputText: string) => void) => void;
   type: 'code' | 'decode';
 }
 
-export function CodeForm({ type }: CodeFormProps) {
+export function CodeForm({ type, onSubmit }: CodeFormProps) {
+  const [inputText, setInputText] = useState('');
+  const [outputText, setOutputText] = useState('');
+
+  function handleChangeInputText(event: ChangeEvent<HTMLTextAreaElement>) {
+    const value = event.target.value;
+    setInputText(value);
+  }
+
+  function handleClear() {
+    setInputText('');
+    setOutputText('');
+  }
+
+  function handleCopyToClipboard() {
+    navigator.clipboard.writeText(outputText);
+  }
+
   return (
     <S.Container>
       <div className="inputs">
@@ -30,15 +49,19 @@ export function CodeForm({ type }: CodeFormProps) {
               {type === 'code' && <Text>Coloque seu texto aqui</Text>}
               {type === 'decode' && <Text>Coloque seu texto <strong id='codified-tip'>codificado</strong> aqui</Text>}
             </TextInputLabel>
-            <TextInputArea placeholder='...' />
+            <TextInputArea
+              value={inputText}
+              onChange={handleChangeInputText}
+              placeholder='...'
+            />
           </TextInputRoot>
 
           <div className="actions">
-            <Button type="button" variant='secondary'>
+            <Button type="button" variant='secondary' onClick={handleClear}>
               Limpar
             </Button>
 
-            <Button type="button">
+            <Button type="button" onClick={() => onSubmit(inputText, (outputText: string) => setOutputText(outputText))}>
               {flexibleLabels.codeBtn[type]}
             </Button>
           </div>
@@ -49,11 +72,14 @@ export function CodeForm({ type }: CodeFormProps) {
             <TextInputLabel>
               {flexibleLabels.labelOutputText[type]}
             </TextInputLabel>
-            <TextInputArea readOnly />
+            <TextInputArea
+              value={outputText}
+              readOnly
+            />
           </TextInputRoot>
 
           <div className="actions">
-            <Button type="button">
+            <Button type="button" onClick={handleCopyToClipboard}>
               Copiar
             </Button>
           </div>

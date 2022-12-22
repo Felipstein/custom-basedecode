@@ -7,11 +7,11 @@ type ButtonProps = {
   asChild?: boolean;
 } & S.ButtonStyledProps & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export function Button({ variant = 'default', asChild, children }: ButtonProps) {
+export function Button({ variant = 'default', asChild, children, ...props }: ButtonProps) {
   const Comp = asChild ? Slot : 'button';
 
   return (
-    <S.Container variant={variant} className="app-button">
+    <S.Container variant={variant} className="app-button" {...props}>
       <Comp>
         {children}
       </Comp>
