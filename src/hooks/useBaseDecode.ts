@@ -16,7 +16,7 @@ export function useBaseDecode(type: 'code' | 'decode') {
         const char = word.split('');
         return char.map(char => {
           const charCode = char.charCodeAt(0);
-          const binary = charCode.toString(2).padStart(8, 0);
+          const binary = charCode.toString(2).padStart(8);
           const encoded = binary
             .replace(/0/g, 'chagas, ')
             .replace(/1/g, 'chagas chagas, ')
