@@ -1,11 +1,10 @@
-import React, { ChangeEvent, useState } from 'react';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { TextInputRoot, TextInputLabel, TextInputArea } from '../../components/TextInput';
-import { useClipboard } from '../../hooks/useClipboard';
 import { Text } from '../Text';
 
 import * as S from './styles';
+import { useCodeForm } from './useCodeForm';
 
 const flexibleLabels = {
   labelOutputText: {
@@ -24,19 +23,14 @@ type CodeFormProps = {
 }
 
 export function CodeForm({ type, onSubmit }: CodeFormProps) {
-  const [inputText, setInputText] = useState('');
-  const [outputText, setOutputText] = useState('');
-  const copyToClipboard = useClipboard();
-
-  function handleChangeInputText(event: ChangeEvent<HTMLTextAreaElement>) {
-    const value = event.target.value;
-    setInputText(value);
-  }
-
-  function handleClear() {
-    setInputText('');
-    setOutputText('');
-  }
+  const {
+    inputText,
+    outputText,
+    handleChangeInputText,
+    setOutputText,
+    handleClear,
+    copyToClipboard
+  } = useCodeForm();
 
   return (
     <S.Container>
