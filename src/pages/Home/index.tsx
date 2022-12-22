@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import { FigmaIcon } from '../../assets/icons/FigmaIcon';
 import { GitHubIcon } from '../../assets/icons/GitHubIcon';
-import Button from '../../components/Button';
+import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { LabelButton } from '../../components/LabelButton';
 import { Logo } from '../../components/Logo';
@@ -17,8 +18,10 @@ export function Home() {
         Codifique ou decodifique qualquer texto na linguagem chagasnês! É simples, fácil, rápido e gratuíto!
       </Text>
 
-      <Button variant='default'>
-        Vamos lá!
+      <Button variant='default' asChild>
+        <Link to="/app/code">
+          Vamos lá!
+        </Link>
       </Button>
 
       <div className="social-links">

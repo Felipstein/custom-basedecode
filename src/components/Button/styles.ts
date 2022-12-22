@@ -1,12 +1,19 @@
+import { Slot } from '@radix-ui/react-slot';
 import styled from 'styled-components';
 
 export type ButtonStyledProps = {
   variant: 'default' | 'secondary';
 }
 
-export const ButtonStyled = styled.button<ButtonStyledProps>`
+export const Container = styled(Slot)<ButtonStyledProps>`
   color: ${({ theme }) => theme.colors.gray[900]};
   background-color: ${({ theme }) => theme.colors.orange[500]};
+
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   font-weight: 600;
   font-family: ${({ theme }) => theme.font.family};
