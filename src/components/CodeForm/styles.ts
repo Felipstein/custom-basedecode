@@ -4,6 +4,10 @@ export const Container = styled.div`
   width: fit-content;
   margin: auto;
 
+  #codified-tip {
+    color: ${({ theme }) => theme.colors.orange[500]};
+  }
+
   .inputs {
     display: flex;
     flex-direction: column;

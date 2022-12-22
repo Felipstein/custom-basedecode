@@ -1,5 +1,7 @@
+import { CodeForm } from '../../components/CodeForm';
+
 export function Decode() {
   return (
-    <h1>Decode Page</h1>
+    <CodeForm type='decode' />
   );
 }
