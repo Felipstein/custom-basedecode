@@ -1,6 +1,7 @@
 import { FigmaIcon } from '../../assets/icons/FigmaIcon';
 import { GitHubIcon } from '../../assets/icons/GitHubIcon';
 import Button from '../../components/Button';
+import { Footer } from '../../components/Footer';
 import { LabelButton } from '../../components/LabelButton';
 import { Logo } from '../../components/Logo';
 import { Text } from '../../components/Text';
@@ -32,6 +33,8 @@ export function Home() {
           </a>
         </LabelButton>
       </div>
+
+      <Footer />
     </S.Container>
   );
 }
