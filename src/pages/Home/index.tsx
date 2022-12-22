@@ -34,7 +34,9 @@ export function Home() {
         </LabelButton>
       </div>
 
-      <Footer />
+      <div className="footer-container">
+        <Footer />
+      </div>
     </S.Container>
   );
 }

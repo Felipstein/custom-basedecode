@@ -20,4 +20,8 @@ export const Container = styled.header`
   .social-links {
     margin-top: 6.8rem;
   }
+  .footer-container {
+    position: absolute;
+    bottom: 3.2rem;
+  }
 `;
