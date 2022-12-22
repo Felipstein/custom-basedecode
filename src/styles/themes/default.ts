@@ -5,6 +5,7 @@ export default {
     family: 'Inter, sans-serif',
 
     size: {
+      lg: '2.0rem',
       md: '1.8rem',
       sm: '1.6rem',
       xsm: '1.4rem',

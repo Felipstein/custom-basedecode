@@ -7,6 +7,7 @@ declare module 'styled-components' {
       family: string,
 
       size: {
+        lg: string;
         md: string;
         sm: string;
         xsm: string;

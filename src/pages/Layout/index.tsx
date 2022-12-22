@@ -1,5 +1,10 @@
 import { Navigate, useLocation } from 'react-router-dom';
 
+import { Logo } from '../../components/Logo';
+import { TabButton } from '../../components/TabButton';
+
+import * as S from './styles';
+
 export function Layout() {
   const location = useLocation();
 
@@ -8,6 +13,20 @@ export function Layout() {
   }
 
   return (
-    <h1>Layout Page</h1>
+    <S.Container>
+      <div className="logo-container">
+        <Logo />
+      </div>
+
+      <div className="nav-bar">
+        <TabButton to="code">
+          Codificar
+        </TabButton>
+
+        <TabButton to="decode">
+          Decodificar
+        </TabButton>
+      </div>
+    </S.Container>
   );
 }
